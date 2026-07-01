@@ -888,6 +888,73 @@ const PROCESSES_DATA = {
             { role: "ME Tracking", dept: "ME Team", responsibility: "Giám sát nội dung, tần suất, status update" }
         ]
     },
+    // =============== 6S & HSE AUDIT ===============
+    "6s-audit": {
+        title: "Hệ thống Kiểm tra 6S & HSE (6S Audit System)",
+        breadcrumb: "6S & HSE Audit",
+        image: "images/6s_audit_app.png",
+        description: "Hệ thống phần mềm hỗ trợ đội kiểm tra (Audit Team) thực hiện đi tuần tra, chụp ảnh và tự động tạo báo cáo về các vi phạm 6S (Sàng lọc, Sắp xếp, Sạch sẽ, Săn sóc, Sẵn sàng, An toàn) và HSE tại nhà máy.",
+        area: "All Production Areas",
+        factory: "LHG, LVL, LYV, LYM",
+        systems: ["6S Audit Mobile App", "HSE Audit Mobile App", "Audit Dashboard"],
+        machines: [
+            { icon: "📱", name: "Tablet / Smartphone", desc: "Thiết bị di động cài app 6S Audit để đi tuần tra" },
+            { icon: "🖥️", name: "Web Dashboard", desc: "Hệ thống quản lý báo cáo và theo dõi khắc phục" }
+        ],
+        workflow: [
+            { name: "Đi tuần tra", current: true },
+            { name: "Chụp ảnh vi phạm" },
+            { name: "Tự động tạo Report" },
+            { name: "Gửi cảnh báo" },
+            { name: "Khắc phục" },
+            { name: "→ Đóng Audit" }
+        ],
+        steps: [
+            {
+                title: "Thực Hiện Tuần Tra (Patrol)",
+                subtitle: "Đội kiểm tra đi tuần tra khu vực",
+                description: "Nhân viên thuộc đội 6S / HSE sử dụng thiết bị di động (Tablet/Smartphone) đi tuần tra các khu vực sản xuất theo lịch trình.",
+                details: [
+                    "Đăng nhập vào ứng dụng 6S Audit trên thiết bị di động",
+                    "Chọn khu vực (Area) và chuyền (Line) đang tiến hành kiểm tra",
+                    "Quan sát và đối chiếu với tiêu chuẩn 6S / HSE của nhà máy"
+                ],
+                result: "Xác định được các điểm không tuân thủ (Non-compliance) tại khu vực.",
+                nextProcess: "Chụp ảnh và ghi nhận vi phạm"
+            },
+            {
+                title: "Ghi Nhận Vi Phạm (Issue Capturing)",
+                subtitle: "Chụp ảnh và nhập liệu trực tiếp",
+                description: "Khi phát hiện vi phạm (ví dụ: rác, vật tư để sai quy định, lối thoát hiểm bị chắn), người kiểm tra chụp ảnh trực tiếp từ ứng dụng.",
+                details: [
+                    "Sử dụng camera của Tablet để chụp ảnh minh chứng vi phạm",
+                    "Đánh dấu (Highlight) khu vực lỗi trực tiếp trên ảnh nếu cần",
+                    "Chọn loại vi phạm (Category) và nhập ghi chú chi tiết",
+                    "Phân công cho người/bộ phận chịu trách nhiệm khắc phục"
+                ],
+                result: "Thông tin vi phạm và hình ảnh được tải lên hệ thống trung tâm ngay lập tức.",
+                nextProcess: "Hệ thống tự động xử lý và gửi báo cáo"
+            },
+            {
+                title: "Tự Động Tạo Báo Cáo & Cảnh Báo",
+                subtitle: "Auto Generate Report",
+                description: "Thay vì phải về văn phòng làm file Word/Excel thủ công, hệ thống tự động tổng hợp tất cả vi phạm thành báo cáo.",
+                details: [
+                    "Hệ thống định dạng hình ảnh và lỗi thành form báo cáo chuẩn",
+                    "Tự động gửi email/tin nhắn (Zalo) đến bộ phận liên quan",
+                    "Cập nhật Dashboard theo dõi tổng thể tiến độ khắc phục"
+                ],
+                result: "Báo cáo được gửi đi nhanh chóng, không mất thời gian tổng hợp thủ công.",
+                nextProcess: "Bộ phận liên quan tiến hành khắc phục"
+            }
+        ],
+        roles: [
+            { role: "System Owner", dept: "Digital Team", responsibility: "Triển khai và hướng dẫn sử dụng" },
+            { role: "System Developer", dept: "LYV-Phat", responsibility: "Phát triển ứng dụng, cấp quyền tài khoản" },
+            { role: "Auditor", dept: "6S/HSE Team", responsibility: "Thực hiện đi tuần, chụp ảnh, ghi nhận lỗi" },
+            { role: "Action Owner", dept: "Production/ME", responsibility: "Nhận báo cáo, khắc phục lỗi và cập nhật trạng thái" }
+        ]
+    },
 
     // =============== KPI DASHBOARD ===============
     "kpi-dashboard": {
@@ -1140,6 +1207,7 @@ function renderOverview() {
                 { key: 'camera-vision', num: '📷', img: 'images/camera_vision.png', title: 'Camera Vision System', desc: 'Hệ thống camera tự động quét mã vạch hộp giày, ghi nhận sản lượng.' },
                 { key: 'downtime', num: '⚠️', img: 'images/downtime_app.png', title: 'Downtime Application', desc: 'Quản lý báo hỏng → sửa chữa máy. Thông báo 3 kênh đồng thời.' },
                 { key: 'tier-meeting', num: '📋', img: 'images/tier_meeting.png', title: 'Tier Meeting System', desc: 'Số hóa họp tầng Tier 1-4. Ghi nhận vấn đề, root cause, action plan.' },
+                { key: '6s-audit', num: '🛡️', img: 'images/6s_audit_app.png', title: '6S & HSE Audit System', desc: 'Ứng dụng tuần tra 6S và An toàn. Chụp ảnh lỗi và tự động báo cáo.' },
                 { key: 'kpi-dashboard', num: '📊', img: 'images/kpi_dashboard.png', title: 'KPI Dashboard', desc: '9 dashboard hiển thị KPI real-time: Production, Material, Cutting, FG...' },
                 { key: 'rfid-system', num: '📡', img: 'images/rfid_system.png', title: 'RFID Last System', desc: 'Quản lý phom giày bằng RFID: binding, mượn/trả, inventory, transfer.' }
             ].map(item => `
