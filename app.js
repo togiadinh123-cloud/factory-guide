@@ -269,17 +269,6 @@ const PROCESSES_DATA = {
         ]
     },
 
-    // =============== OUTSOLE WAREHOUSE ===============
-    "outsole-warehouse": {
-        title: "Kho Đế Giày (Outsole Warehouse)",
-        breadcrumb: "Kho Đế Giày",
-        image: "images/outsole_warehouse.png",
-        description: "Kho Đế Giày tiếp nhận và quản lý đế giày (outsole) từ nhà cung cấp hoặc từ xưởng Bottom sản xuất nội bộ. Hệ thống Incoming Outsole Material Entry ghi nhận số lượng nhập kho và tích hợp dữ liệu vào PO Tracking.",
-        area: "Outsole Warehouse",
-        factory: "LHG | LVL",
-        systems: ["Incoming Outsole Material Entry", "QC Inspection Systems", "Inhouse Outsole Scanning", "PO Tracking"],
-        machines: [
-            { icon: "📱", name: "Tablet EIP", desc: "Thiết bị truy cập hệ thống EIP nhập liệu đế giày" },
             { icon: "🔍", name: "Thiết bị QC Inspection", desc: "Dụng cụ kiểm tra chất lượng đế giày" },
             { icon: "📊", name: "Barcode Scanner", desc: "Quét mã vạch trên đế giày inhouse" }
         ],
@@ -329,17 +318,6 @@ const PROCESSES_DATA = {
         ]
     },
 
-    // =============== LAST WAREHOUSE ===============
-    "last-warehouse": {
-        title: "Kho Phom Giày (Last Warehouse) - Hệ Thống RFID",
-        breadcrumb: "Kho Phom Giày",
-        image: "images/rfid_system.png",
-        description: "Kho Phom (Last Warehouse) quản lý các phom giày (shoe lasts/molds) bằng công nghệ RFID. Mỗi phom được gắn chip RFID, cho phép quét nhanh khi mượn/trả, theo dõi tồn kho real-time và giám sát việc sử dụng phom tại chuyền Assembly.",
-        area: "Last Warehouse",
-        factory: "LHG",
-        systems: ["RFID Last Scan App", "Last EIP System", "RFID Last Chiller Dashboard"],
-        machines: [
-            { icon: "📡", name: "RFID Handheld Scanner", desc: "Máy quét cầm tay đọc chip RFID trên phom giày" },
             { icon: "🏷️", name: "RFID Tags", desc: "Chip RFID gắn trên mỗi phom giày" },
             { icon: "💻", name: "EIP Last System", desc: "Hệ thống web quản lý phom trên EIP" },
             { icon: "📺", name: "Last Chiller Dashboard", desc: "Màn hình theo dõi real-time phom qua reader tại Assembly" }
@@ -422,17 +400,6 @@ const PROCESSES_DATA = {
         ]
     },
 
-    // =============== STOCKFITTING ===============
-    "stockfitting": {
-        title: "Stockfitting",
-        breadcrumb: "Stockfitting",
-        image: "images/assembly_line.png",
-        description: "Stockfitting là công đoạn chuẩn bị trước Assembly, bao gồm gắn lót (insole), strobel và các phụ kiện vào Upper. Sản lượng được ghi nhận qua Production Manager và EIP Hourly Output Entry.",
-        area: "Stockfitting Area",
-        factory: "ALL FTY (EIP Hourly Output: LHG only)",
-        systems: ["Production Manager - Endline QC", "EIP Hourly Output Entry", "Stockfitting Dashboard"],
-        machines: [
-            { icon: "🔨", name: "Trạm Stockfitting", desc: "Trạm làm việc gắn lót và phụ kiện vào Upper" },
             { icon: "📱", name: "Tablet QC Endline", desc: "Thiết bị ghi nhận kết quả QC cuối chuyền" },
             { icon: "💻", name: "EIP Terminal", desc: "Nhập sản lượng theo giờ vào EIP" }
         ],
@@ -479,17 +446,6 @@ const PROCESSES_DATA = {
         ]
     },
 
-    // =============== ASSEMBLY ===============
-    "assembly": {
-        title: "Xưởng Ráp (Assembly)",
-        breadcrumb: "Xưởng Ráp",
-        image: "images/assembly_line.png",
-        description: "Assembly là công đoạn cuối cùng trong sản xuất giày, nơi Upper được gắn vào phom (Last), dán đế (Outsole) và hoàn thiện thành đôi giày hoàn chỉnh. Sản lượng được ghi nhận qua Camera Vision System hoặc Production Input App.",
-        area: "Assembly Area",
-        factory: "ALL FTY",
-        systems: ["Camera Vision System", "Production Input App", "RFID Last System", "RFID Last Chiller", "Endline QC", "Andon System", "KPI Dashboard"],
-        machines: [
-            { icon: "📷", name: "Camera Vision System", desc: "Hệ thống camera quét mã vạch hộp giày tự động ghi nhận sản lượng" },
             { icon: "🔥", name: "Lò Ép (Oven)", desc: "Lò nhiệt để ép keo gắn Upper với đế giày" },
             { icon: "❄️", name: "Chiller", desc: "Máy làm lạnh để cố định keo sau khi ép" },
             { icon: "📡", name: "RFID Reader", desc: "Đầu đọc RFID tại công đoạn de-last (tháo phom)" },
@@ -559,17 +515,6 @@ const PROCESSES_DATA = {
         ]
     },
 
-    // =============== FINISHED GOODS ===============
-    "finished-goods": {
-        title: "Kho Thành Phẩm (Finished Goods Warehouse)",
-        breadcrumb: "Kho Thành Phẩm",
-        image: "images/finished_goods.png",
-        description: "Kho Thành Phẩm là điểm cuối của quy trình sản xuất. Giày hoàn chỉnh được nhập kho, chờ kiểm tra (inspection), lab test, và xuất hàng (shipment). Dashboard FG hiển thị tổng quan tình trạng đơn hàng.",
-        area: "Finished Goods Warehouse",
-        factory: "ALL FTY",
-        systems: ["Production Manager - FG Warehouse Scanning", "FG Escalation (QIP)", "Finished Goods Dashboard"],
-        machines: [
-            { icon: "📊", name: "FG Scanning System", desc: "Hệ thống quét mã vạch nhập kho thành phẩm" },
             { icon: "📦", name: "Conveyor & Pallet", desc: "Hệ thống băng chuyền và pallet vận chuyển" },
             { icon: "🚛", name: "Forklift", desc: "Xe nâng di chuyển hàng trong kho" }
         ],
@@ -956,6 +901,393 @@ const PROCESSES_DATA = {
         ]
     },
 
+
+    // =============== PO TRACKING ERP INPUT ===============
+    "po-tracking": {
+        title: "PO Tracking ERP Input",
+        breadcrumb: "PO Tracking",
+        image: "images/po_tracking.png",
+        description: "Hệ thống cập nhật sản lượng hàng ngày (Daily Done Quantity) vào ERP. Dữ liệu này dùng để theo dõi tiến độ đơn hàng (PO), tính toán hiệu suất và lập kế hoạch sản xuất.",
+        area: "All Production Areas",
+        factory: "ALL FTY",
+        systems: ["ERP Pro Plan (N5J)"],
+        machines: [
+            { icon: "💻", name: "Máy tính bàn / Terminal", desc: "Sử dụng truy cập hệ thống ERP của nhà máy" }
+        ],
+        workflow: [
+            { name: "Tạo Department", current: true },
+            { name: "Thêm lệnh RY" },
+            { name: "Nhập sản lượng" },
+            { name: "Xác nhận (Confirm)" },
+            { name: "Query Data" }
+        ],
+        steps: [
+            {
+                title: "Tạo Record Phòng Ban (Department)",
+                subtitle: "Tạo thông tin phòng ban ghi nhận sản lượng",
+                description: "Nhân viên truy cập hệ thống ERP (Pro Plan -> N5 Output -> N5J) để tạo Department record cho ngày ghi nhận.",
+                details: [
+                    "Chọn ngày sản lượng (Date)",
+                    "Chọn phòng ban (Department) từ danh sách",
+                    "Ví dụ: C (Inline Cutting), AC (Centralized Cutting)"
+                ],
+                result: "Department record được tạo trên hệ thống.",
+                nextProcess: "Thêm RY và nhập số lượng hoàn thành"
+            },
+            {
+                title: "Thêm Lệnh (RY) và Nhập Số Lượng",
+                subtitle: "Ghi nhận sản lượng hoàn thành hàng ngày",
+                description: "Sau khi tạo Department, nhân viên tiến hành nhập số lượng chi tiết đã làm xong.",
+                details: [
+                    "Chọn dòng Department, bấm Insert để mở cửa sổ chọn RY",
+                    "Tìm kiếm và chọn các chi tiết (components) đã hoàn thành",
+                    "Lưu ý: Chỉ nhập số lượng hoàn thành của ngày đó (Daily Done), KHÔNG nhập cộng dồn (Accumulated)",
+                    "Với Ép nóng, Cao tần: Chỉ nhập chi tiết cắt đầu vào, không nhập chi tiết thành phẩm gộp"
+                ],
+                result: "Sản lượng hàng ngày của từng RY được ghi nhận vào hệ thống.",
+                nextProcess: "Xác nhận dữ liệu"
+            },
+            {
+                title: "Xác Nhận Dữ Liệu (Confirm)",
+                subtitle: "Khóa dữ liệu sau khi nhập xong",
+                description: "Đây là bước bắt buộc để dữ liệu chính thức được ghi nhận và liên kết sang các hệ thống báo cáo (Productivity, KPI).",
+                details: [
+                    "Sau khi nhập đủ dữ liệu trong ngày, click chuột phải vào dòng Department",
+                    "Chọn 'Confirm' và chọn 'Yes'",
+                    "Dữ liệu sẽ bị khóa và không thể tự ý sửa đổi nếu không có quyền admin"
+                ],
+                result: "Sản lượng được xác nhận, hệ thống tự động cập nhật vào N5 Output.",
+                nextProcess: "Chuyển dữ liệu sang Productivity System"
+            }
+        ],
+        roles: [
+            { role: "Data Entry", dept: "Production Admin", responsibility: "Nhập liệu sản lượng hàng ngày chính xác và đúng hạn" },
+            { role: "Approver", dept: "Production Supervisor", responsibility: "Kiểm tra và xác nhận dữ liệu trước khi khóa" }
+        ]
+    },
+
+    // =============== PRODUCTIVITY SYSTEM ===============
+    "productivity-system": {
+        title: "Hệ thống Năng Suất (Productivity System)",
+        breadcrumb: "Productivity",
+        image: "images/productivity_system.png",
+        description: "Hệ thống đo lường Năng suất lao động (Productivity %). Kết nối dữ liệu nhân sự (Labor Ratio), sản lượng (PP Data - Pairs/Person) từ ERP để tự động tính toán hiệu suất từng xưởng, từng chuyền.",
+        area: "All Production Areas",
+        factory: "ALL FTY",
+        systems: ["Productivity Dashboard", "ERP System (N52)", "HR System"],
+        machines: [
+            { icon: "🖥️", name: "Web Application", desc: "Hệ thống nền tảng web nội bộ nhà máy" }
+        ],
+        workflow: [
+            { name: "Nhập PP Data", current: true },
+            { name: "Nhập Labor Ratio" },
+            { name: "Loại trừ Packing" },
+            { name: "Xử lý Dữ liệu" },
+            { name: "Xuất Total Report" }
+        ],
+        steps: [
+            {
+                title: "Quản lý PP Data (Pairs/Person)",
+                subtitle: "Nhập dữ liệu mục tiêu năng suất",
+                description: "Hệ thống dựa trên dữ liệu sản xuất hàng ngày (Article produced) để liên kết với báo cáo tổng hợp. Người dùng (thường là IE) có thể upload dữ liệu PP qua file Excel.",
+                details: [
+                    "Sử dụng nút 'Tải Mẫu' để lấy form Excel chuẩn",
+                    "Nhập dữ liệu PP (Pairs/Person) vào file Excel",
+                    "Bấm 'Import Excel' để tải dữ liệu lên hệ thống",
+                    "Có thể chỉnh sửa (Edit) hoặc xóa (Delete) trực tiếp trên Web"
+                ],
+                result: "Dữ liệu mục tiêu PP được cập nhật vào cơ sở dữ liệu.",
+                nextProcess: "Cập nhật Tỷ lệ lao động (Labor Ratio)"
+            },
+            {
+                title: "Quản lý Labor Ratio (Tỷ lệ nhân công)",
+                subtitle: "Ghi nhận tỷ lệ tham gia lao động",
+                description: "Kết hợp dữ liệu từ HR và dữ liệu thực tế tại xưởng để tính toán nhân công trực tiếp (Direct Labor).",
+                details: [
+                    "Tìm kiếm theo ngày và chuyền (Line)",
+                    "Nhập dữ liệu tỷ lệ nhân công theo form Excel (Tải mẫu -> Import)",
+                    "Dữ liệu này sẽ được dùng để chia trung bình sản lượng thực tế"
+                ],
+                result: "Tỷ lệ nhân công được cập nhật.",
+                nextProcess: "Thiết lập loại trừ (Packing Exclusion)"
+            },
+            {
+                title: "Báo Cáo Tổng Hợp (Total Report & Productivity %)",
+                subtitle: "Tính toán và xuất báo cáo năng suất",
+                description: "Hệ thống tổng hợp dữ liệu từ PP Data, Labor Ratio, ERP (FG Import) để ra % Năng suất cuối cùng.",
+                details: [
+                    "Truy cập tab Total Report",
+                    "Tìm kiếm theo: Khoảng thời gian (Date range), Xưởng (Floor), Công đoạn (Process)",
+                    "Hệ thống tính toán: (Sản lượng thực tế / Nhân công thực tế) / Mục tiêu PP",
+                    "Bấm Export để xuất file Excel lấy chữ ký xác nhận của Quản lý sản xuất"
+                ],
+                result: "Báo cáo năng suất được tự động tính toán chính xác, minh bạch.",
+                nextProcess: "Đánh giá KPI và thưởng năng suất"
+            }
+        ],
+        roles: [
+            { role: "IE Dept", dept: "Industrial Engineering", responsibility: "Cập nhật PP Data, Labor Ratio và quản lý hệ thống" },
+            { role: "Production Manager", dept: "Production", responsibility: "Ký xác nhận báo cáo Total Report cuối tháng" }
+        ]
+    },
+
+    // =============== KAIZEN CLOUD ===============
+    "kaizen-cloud": {
+        title: "Hệ thống Cải tiến (Kaizen Cloud)",
+        breadcrumb: "Kaizen Cloud",
+        image: "images/kaizen_cloud.png",
+        description: "Nền tảng trực tuyến cho phép nhân viên nộp ý tưởng cải tiến (Kaizen). Hệ thống tự động theo dõi tiến độ phê duyệt, tính toán chi phí tiết kiệm (Cost Saving) và vinh danh nhân viên xuất sắc.",
+        area: "All Departments",
+        factory: "ALL FTY",
+        systems: ["Kaizen Cloud Web", "HR Integration"],
+        machines: [
+            { icon: "🌐", name: "Web Application", desc: "Truy cập từ PC hoặc thiết bị di động" }
+        ],
+        workflow: [
+            { name: "Nộp Kaizen", current: true },
+            { name: "Production CI duyệt" },
+            { name: "ME đánh giá" },
+            { name: "Thực nghiệm (Trial)" },
+            { name: "Chốt báo cáo" }
+        ],
+        steps: [
+            {
+                title: "Nộp Ý Tưởng Kaizen (Submission)",
+                subtitle: "Tạo mới một hồ sơ Kaizen",
+                description: "Bất kỳ nhân viên nào cũng có thể truy cập Kaizen Cloud để nộp ý tưởng cải tiến nhằm giảm thiểu lãng phí (giấy tờ, thời gian, vật tư...).",
+                details: [
+                    "Truy cập hệ thống và chọn icon bóng đèn (Submit Kaizen)",
+                    "Điền thông tin: Loại cải tiến, Mô tả vấn đề hiện tại, Giải pháp đề xuất",
+                    "Đính kèm hình ảnh minh họa (nếu có)"
+                ],
+                result: "Hồ sơ Kaizen được lưu trữ với trạng thái 'Chờ xử lý' (Not processed yet).",
+                nextProcess: "Đánh giá bởi Production CI và ME"
+            },
+            {
+                title: "Đánh giá và Thực nghiệm (Evaluation & Trial)",
+                subtitle: "Quy trình phê duyệt nhiều cấp",
+                description: "Ý tưởng sẽ đi qua quy trình phê duyệt chặt chẽ để đảm bảo tính khả thi.",
+                details: [
+                    "Production CI duyệt sơ bộ tại xưởng",
+                    "ME (Manufacturing Engineering) đánh giá tính kỹ thuật",
+                    "Các bộ phận liên quan (QIP, Tech) tham gia phê duyệt nếu cần",
+                    "Nếu ý tưởng cần thực nghiệm (Trial), hệ thống sẽ chuyển sang trạng thái theo dõi kết quả thực nghiệm"
+                ],
+                result: "Kaizen được phê duyệt chuyển sang trạng thái ONGOING (Đang tiến hành) hoặc DONE (Hoàn thành).",
+                nextProcess: "Đo lường hiệu quả"
+            },
+            {
+                title: "Báo cáo và Vinh danh (Report & Awarding)",
+                subtitle: "Dashboard tự động hóa hoàn toàn",
+                description: "Hệ thống thay thế hoàn toàn báo cáo Excel thủ công, tự động tính toán tổng số tiền tiết kiệm được.",
+                details: [
+                    "Dashboard hiển thị: Tổng số Kaizen theo danh mục, theo phòng ban",
+                    "Hệ thống tự động liên kết với phần mềm nhân sự (HR) để lấy ảnh chân dung Top 3 người nộp Kaizen xuất sắc nhất tháng",
+                    "Xuất báo cáo PDF tự động cho Ban Giám Đốc"
+                ],
+                result: "Dữ liệu minh bạch, có thể truy xuất (traceable) dễ dàng và tạo động lực cho nhân viên.",
+                nextProcess: "Áp dụng Kaizen vào sản xuất đại trà"
+            }
+        ],
+        roles: [
+            { role: "Submitter", dept: "All Staffs", responsibility: "Nộp ý tưởng cải tiến" },
+            { role: "Evaluator", dept: "Prod CI / ME", responsibility: "Đánh giá, phê duyệt và hỗ trợ thực nghiệm" },
+            { role: "System Admin", dept: "Digital Team", responsibility: "Chỉnh sửa dữ liệu (nếu cần) và bảo trì hệ thống" }
+        ]
+    },
+    
+    // =============== OUTSOLE WAREHOUSE ===============
+    "outsole-warehouse": {
+        title: "Kho Đế Giày (Outsole Warehouse)",
+        breadcrumb: "Kho Đế Giày",
+        image: "images/outsole_warehouse.png",
+        description: "Quản lý việc tiếp nhận đế giày (Outsole) từ nhà cung cấp, kiểm tra chất lượng và lưu trữ trước khi chuyển sang xưởng Stockfitting.",
+        area: "Outsole Warehouse",
+        factory: "ALL FTY",
+        systems: ["MES Digital Warehouse", "PO Tracking"],
+        machines: [
+            { icon: "📱", name: "Scanner", desc: "Máy quét mã vạch nhập kho" }
+        ],
+        workflow: [
+            { name: "Tiếp nhận Đế", current: true },
+            { name: "Quét Barcode" },
+            { name: "QC Check" },
+            { name: "Lưu kho" },
+            { name: "→ Xuất sang Stockfitting" }
+        ],
+        steps: [
+            {
+                title: "Quét mã vạch nhập kho",
+                subtitle: "Ghi nhận Outsole Entry",
+                description: "Khi nhà cung cấp giao đế, nhân viên kho sử dụng máy quét để quét mã vạch (Barcode Job Ticket) trên các thùng đế.",
+                details: [
+                    "Mở ứng dụng Incoming Outsole Material Entry",
+                    "Quét mã vạch thùng hàng",
+                    "Đối chiếu dữ liệu với PO trên hệ thống"
+                ],
+                result: "Đế giày được ghi nhận nhập kho thành công.",
+                nextProcess: "Kiểm tra chất lượng (QC)"
+            }
+        ],
+        roles: [
+            { role: "Warehouse Keeper", dept: "Outsole WH", responsibility: "Quét mã nhập/xuất kho" }
+        ]
+    },
+
+    // =============== LAST WAREHOUSE ===============
+    "last-warehouse": {
+        title: "Kho Phom Giày (Last Warehouse)",
+        breadcrumb: "Kho Phom",
+        image: "images/rfid_system.png",
+        description: "Kho lưu trữ và quản lý phom giày (Last). Sử dụng hệ thống RFID để tự động hóa việc theo dõi tồn kho, mượn/trả và luân chuyển phom giữa các xưởng.",
+        area: "Last Warehouse",
+        factory: "LHG",
+        systems: ["RFID Last System", "EIP Dashboard"],
+        machines: [
+            { icon: "📡", name: "RFID Gateway", desc: "Cổng quét tự động tại cửa kho" },
+            { icon: "🔫", name: "RFID Handheld", desc: "Máy quét RFID cầm tay" }
+        ],
+        workflow: [
+            { name: "Gắn chip (Binding)", current: true },
+            { name: "Nhập kho (In)" },
+            { name: "Xuất kho (Out)" },
+            { name: "Chuyển xưởng (Transfer)" },
+            { name: "Kiểm kê (Inventory)" }
+        ],
+        steps: [
+            {
+                title: "Gắn chip RFID (Binding)",
+                subtitle: "Đồng bộ phom thực tế với hệ thống",
+                description: "Mỗi chiếc phom giày đều được gắn một thẻ RFID siêu nhỏ. Dữ liệu RFID được 'binding' (kết nối) với mã vạch của phom.",
+                details: [
+                    "Quét mã vạch trên phom giày",
+                    "Quét thẻ RFID cần gắn",
+                    "Lưu vào hệ thống để liên kết 1-1"
+                ],
+                result: "Phom giày sẵn sàng để được hệ thống theo dõi tự động bằng sóng vô tuyến.",
+                nextProcess: "Nhập/Xuất kho tự động qua cổng"
+            }
+        ],
+        roles: [
+            { role: "Last WH Keeper", dept: "Warehouse", responsibility: "Quản lý xuất nhập phom" }
+        ]
+    },
+
+    // =============== STOCKFITTING ===============
+    "stockfitting": {
+        title: "Xưởng Stockfitting (Chặt/Ép Đế)",
+        breadcrumb: "Stockfitting",
+        image: "images/stockfitting.png",
+        description: "Khu vực xử lý đế giày (Outsole) và các thành phần phụ. Áp dụng kỹ thuật ép nhiệt (High Frequency) và in ấn (Printing) trước khi đưa sang xưởng Ráp.",
+        area: "Stockfitting Area",
+        factory: "ALL FTY",
+        systems: ["PO Tracking ERP", "Kanban Calling"],
+        machines: [
+            { icon: "🔥", name: "Máy Ép Nhiệt", desc: "Xử lý bề mặt vật liệu" },
+            { icon: "🖼️", name: "Máy In (Printing)", desc: "In họa tiết lên đế/thân giày" }
+        ],
+        workflow: [
+            { name: "Nhận vật tư", current: true },
+            { name: "Ép/In" },
+            { name: "Xử lý keo" },
+            { name: "Nhập PO Tracking" },
+            { name: "→ Xưởng Ráp" }
+        ],
+        steps: [
+            {
+                title: "Ghi nhận sản lượng",
+                subtitle: "Sử dụng PO Tracking ERP",
+                description: "Sau khi hoàn thành công đoạn ép/in, công nhân ghi nhận sản lượng thực tế vào ERP.",
+                details: [
+                    "Chỉ nhập số lượng chi tiết đầu vào đã hoàn thành",
+                    "Không nhập cộng dồn thành phẩm cuối cùng"
+                ],
+                result: "Cập nhật được sản lượng hàng ngày cho công đoạn Stockfitting.",
+                nextProcess: "Chuyển chi tiết sang Assembly"
+            }
+        ],
+        roles: [
+            { role: "Operator", dept: "Stockfitting", responsibility: "Vận hành máy và ghi sản lượng" }
+        ]
+    },
+
+    // =============== ASSEMBLY ===============
+    "assembly": {
+        title: "Xưởng Ráp (Assembly Line)",
+        breadcrumb: "Xưởng Ráp",
+        image: "images/assembly_line.png",
+        description: "Dây chuyền lắp ráp cuối cùng, kết hợp thân giày (Upper) từ xưởng May và đế giày (Outsole) từ Stockfitting để tạo thành đôi giày hoàn chỉnh.",
+        area: "Assembly Line",
+        factory: "ALL FTY",
+        systems: ["Camera Vision System", "Downtime App", "Tier Meeting"],
+        machines: [
+            { icon: "📷", name: "Camera Vision", desc: "Quét hộp giày tự động" },
+            { icon: "⚙️", name: "Băng chuyền ráp", desc: "Hệ thống băng chuyền tự động" }
+        ],
+        workflow: [
+            { name: "Gò/Ép form", current: true },
+            { name: "Phết keo" },
+            { name: "Ráp đế" },
+            { name: "QC Check" },
+            { name: "Đóng hộp (Vision)" }
+        ],
+        steps: [
+            {
+                title: "Đóng hộp và Quét mã",
+                subtitle: "Ghi nhận thành phẩm bằng Camera Vision",
+                description: "Sau khi ráp xong và qua QC, giày được đóng hộp. Băng chuyền đi qua Camera tự động để quét mã vạch trên hộp.",
+                details: [
+                    "Hộp giày di chuyển qua khu vực Camera",
+                    "Camera đọc mã Barcode/QR",
+                    "Dữ liệu được đẩy thẳng lên Production Dashboard theo thời gian thực"
+                ],
+                result: "Sản lượng được ghi nhận tự động, không cần nhân công đếm tay.",
+                nextProcess: "Chuyển sang kho Thành Phẩm (FG)"
+            }
+        ],
+        roles: [
+            { role: "Assembly Worker", dept: "Assembly", responsibility: "Lắp ráp giày theo SOP" },
+            { role: "QC Inspector", dept: "Quality", responsibility: "Kiểm tra lỗi thành phẩm" }
+        ]
+    },
+
+    // =============== FINISHED GOODS ===============
+    "finished-goods": {
+        title: "Kho Thành Phẩm (Finished Goods - FG)",
+        breadcrumb: "Kho FG",
+        image: "images/finished_goods.png",
+        description: "Khu vực lưu trữ giày thành phẩm. Quản lý việc nhập kho từ xưởng Ráp, bốc dỡ, lưu trữ chờ xuất khẩu cho khách hàng.",
+        area: "FG Warehouse",
+        factory: "ALL FTY",
+        systems: ["ERP FG Import", "6S Audit"],
+        machines: [
+            { icon: "📦", name: "Barcode Scanner", desc: "Quét kiện hàng nhập kho" }
+        ],
+        workflow: [
+            { name: "Nhận từ Ráp", current: true },
+            { name: "Quét nhập kho" },
+            { name: "Lưu trữ (Layout)" },
+            { name: "Kiểm định Lab" },
+            { name: "Xuất hàng (Ship)" }
+        ],
+        steps: [
+            {
+                title: "Nhập Kho FG",
+                subtitle: "Đồng bộ ERP",
+                description: "Kiện hàng được scan nhập kho. Dữ liệu này được kết nối trực tiếp với Productivity System để chốt báo cáo năng suất của toàn bộ nhà máy.",
+                details: [
+                    "Sử dụng máy quét PDA để nhận hàng",
+                    "Đảm bảo khu vực gọn gàng theo tiêu chuẩn 6S"
+                ],
+                result: "Giày sẵn sàng để xuất khẩu.",
+                nextProcess: "Đóng vào container và xuất hàng"
+            }
+        ],
+        roles: [
+            { role: "FG WH Keeper", dept: "Warehouse", responsibility: "Quản lý tồn kho thành phẩm và sắp xếp layout" }
+        ]
+    }
+
     // =============== KPI DASHBOARD ===============
     "kpi-dashboard": {
         title: "KPI Dashboard (External & Internal)",
@@ -1208,6 +1540,9 @@ function renderOverview() {
                 { key: 'downtime', num: '⚠️', img: 'images/downtime_app.png', title: 'Downtime Application', desc: 'Quản lý báo hỏng → sửa chữa máy. Thông báo 3 kênh đồng thời.' },
                 { key: 'tier-meeting', num: '📋', img: 'images/tier_meeting.png', title: 'Tier Meeting System', desc: 'Số hóa họp tầng Tier 1-4. Ghi nhận vấn đề, root cause, action plan.' },
                 { key: '6s-audit', num: '🛡️', img: 'images/6s_audit_app.png', title: '6S & HSE Audit System', desc: 'Ứng dụng tuần tra 6S và An toàn. Chụp ảnh lỗi và tự động báo cáo.' },
+                { key: 'po-tracking', num: '📈', img: 'images/po_tracking.png', title: 'PO Tracking ERP Input', desc: 'Hệ thống nhập sản lượng ngày vào ERP để theo dõi tiến độ đơn hàng.' },
+                { key: 'productivity-system', num: '⏱️', img: 'images/productivity_system.png', title: 'Productivity System', desc: 'Đo lường năng suất lao động (Productivity %) tự động từ HR và ERP.' },
+                { key: 'kaizen-cloud', num: '💡', img: 'images/kaizen_cloud.png', title: 'Kaizen Cloud', desc: 'Nền tảng gửi ý tưởng cải tiến, phê duyệt và vinh danh tự động.' },
                 { key: 'kpi-dashboard', num: '📊', img: 'images/kpi_dashboard.png', title: 'KPI Dashboard', desc: '9 dashboard hiển thị KPI real-time: Production, Material, Cutting, FG...' },
                 { key: 'rfid-system', num: '📡', img: 'images/rfid_system.png', title: 'RFID Last System', desc: 'Quản lý phom giày bằng RFID: binding, mượn/trả, inventory, transfer.' }
             ].map(item => `
