@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hướng dẫn chi tiết quy trình sản xuất giày - End to End Digital System Guide">
+    <title>E2E Digital System Guide - Hướng Dẫn Quy Trình Nhà Máy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <span class="loader-text">Đang tải hệ thống...</span>
+        </div>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <rect width="40" height="40" rx="10" fill="url(#logoGrad)"/>
+                        <path d="M12 28C12 28 14 20 20 16C26 12 30 14 30 14L28 20C28 20 24 18 20 22C16 26 14 28 12 28Z" fill="white" opacity="0.9"/>
+                        <defs><linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#00D4AA"/><stop offset="1" stop-color="#0088FF"/></linearGradient></defs>
+                    </svg>
+                </div>
+                <div class="logo-text" style="text-transform: none;">
+                    <h1>jungcook is me</h1>
+                    <span>Factory Guide</span>
+                </div>
+            </div>
+            <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle sidebar">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <div class="sidebar-search">
+            <div class="search-box">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                <input type="text" id="search-input" placeholder="Tìm kiếm quy trình...">
+            </div>
+        </div>
+
+        <ul class="nav-list" id="nav-list">
+            <li class="nav-item active" data-section="overview">
+                <div class="nav-icon">🏭</div>
+                <span>Tổng Quan Hệ Thống</span>
+            </li>
+            <li class="nav-item" data-section="material-warehouse">
+                <div class="nav-icon">📦</div>
+                <span>Kho Nguyên Vật Liệu</span>
+            </li>
+            <li class="nav-item" data-section="cutting">
+                <div class="nav-icon">✂️</div>
+                <span>Xưởng Cắt (Cutting)</span>
+            </li>
+            <li class="nav-item" data-section="stitching">
+                <div class="nav-icon">🧵</div>
+                <span>Xưởng May (Stitching)</span>
+            </li>
+            <li class="nav-item" data-section="outsole-warehouse">
+                <div class="nav-icon">👟</div>
+                <span>Kho Đế Giày (Outsole)</span>
+            </li>
+            <li class="nav-item" data-section="last-warehouse">
+                <div class="nav-icon">🏷️</div>
+                <span>Kho Phom (Last WH)</span>
+            </li>
+            <li class="nav-item" data-section="stockfitting">
+                <div class="nav-icon">🔧</div>
+                <span>Stockfitting</span>
+            </li>
+            <li class="nav-item" data-section="assembly">
+                <div class="nav-icon">🏗️</div>
+                <span>Xưởng Ráp (Assembly)</span>
+            </li>
+            <li class="nav-item" data-section="finished-goods">
+                <div class="nav-icon">📤</div>
+                <span>Kho Thành Phẩm (FG)</span>
+            </li>
+            <li class="nav-divider">Hệ Thống Quản Lý</li>
+            <li class="nav-item" data-section="camera-vision">
+                <div class="nav-icon">📷</div>
+                <span>Camera Vision</span>
+            </li>
+            <li class="nav-item" data-section="downtime">
+                <div class="nav-icon">⚠️</div>
+                <span>Downtime App</span>
+            </li>
+            <li class="nav-item" data-section="tier-meeting">
+                <div class="nav-icon">📋</div>
+                <span>Tier Meeting</span>
+            </li>
+            <li class="nav-item" data-section="kpi-dashboard">
+                <div class="nav-icon">📊</div>
+                <span>KPI Dashboard</span>
+            </li>
+            <li class="nav-item" data-section="rfid-system">
+                <div class="nav-icon">📡</div>
+                <span>RFID Last System</span>
+            </li>
+            <li class="nav-divider">Luyện Tập Phỏng Vấn</li>
+            <li class="nav-item" data-section="qa-interview">
+                <div class="nav-icon">🎤</div>
+                <span>Q&A Với Sếp</span>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Mobile Overlay -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="breadcrumb" id="breadcrumb">
+                <span>🏠 Trang chủ</span>
+                <span class="breadcrumb-separator">/</span>
+                <span id="breadcrumb-current">Tổng Quan Hệ Thống</span>
+            </div>
+            <div class="top-bar-actions">
+                <button id="global-lang-toggle" class="lang-toggle-btn" onclick="toggleGlobalLanguage()" aria-label="Toggle language">
+                    <span class="lang-flag" id="global-lang-flag">🇻🇳</span>
+                    <span class="lang-label" id="global-lang-label">VN</span>
+                </button>
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Content Container -->
+        <div class="content-container" id="content-container">
+            <!-- Content will be dynamically loaded here -->
+        </div>
+    </main>
+
+    <!-- Progress Indicator for step-by-step -->
+    <div id="step-progress" class="step-progress hidden">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <span class="progress-text" id="progress-text">Bước 1/5</span>
+    </div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+    <!-- Hidden Google Translate Widget -->
+    <div id="google_translate_element" style="display:none;"></div>
+    
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                includedLanguages: 'en,vi',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script src="app.js"></script>
+</body>
+</html>
